@@ -10,6 +10,7 @@ void logger(LogType type, const char *file, const int line, const char *message,
 	char tag[LOG_TAG_SIZE];
 	char color[LOG_COLOR_SIZE];
 	FILE *output;
+
 	switch (type) {
 		case LOG_TRACE:
 			strcpy(tag, LOG_TEXT_TRACE);
