@@ -3,7 +3,7 @@
 
 #define KEY_SIZE 128
 #define SERVER_HOST_SIZE 256
-#define SERVER_PORT_SIZE 4 // TODO: increase port size
+#define SERVER_PORT_SIZE 5 // TODO: increase port size
 #define TARGET_DIRECTORY_SIZE 512
 
 #define HOSTNAME_SIZE 128

@@ -1,0 +1,53 @@
+[
+  {
+    "file": "src/log.c",
+    "arguments": [
+      "/sbin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Iinclude",
+      "-MMD",
+      "-MP",
+      "-c",
+      "src/log.c",
+      "-o",
+      "build/log.o"
+    ],
+    "directory": "/home/gerarc/Workspace/Ransomware/encoder/2_implementation",
+    "output": "build/log.o"
+  },
+  {
+    "file": "src/main.c",
+    "arguments": [
+      "/sbin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Iinclude",
+      "-MMD",
+      "-MP",
+      "-c",
+      "src/main.c",
+      "-o",
+      "build/main.o"
+    ],
+    "directory": "/home/gerarc/Workspace/Ransomware/encoder/2_implementation",
+    "output": "build/main.o"
+  },
+  {
+    "file": "src/encoder.c",
+    "arguments": [
+      "/sbin/gcc",
+      "-Wall",
+      "-Wextra",
+      "-Iinclude",
+      "-MMD",
+      "-MP",
+      "-c",
+      "src/encoder.c",
+      "-o",
+      "build/encoder.o"
+    ],
+    "directory": "/home/gerarc/Workspace/Ransomware/encoder/2_implementation",
+    "output": "build/encoder.o"
+  }
+]

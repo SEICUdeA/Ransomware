@@ -2,9 +2,6 @@
 #define LOG_H
 
 #include <stdarg.h>
-#include <string.h>
-#include <stdio.h>
-#include <time.h>
 
 /* Configuration of the logs */
 #define LOG_TAG_SIZE 8

@@ -1,6 +1,6 @@
-#include "../include/encoder.h"
-#include "../include/log.h"
-#include <stdio.h>
+#include <encoder.h>
+#include <log.h>
+#include <string.h>
 
 int main(int argv, char **argc) {
 	log_info("Encoder begins");

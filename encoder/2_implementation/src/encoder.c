@@ -1,4 +1,4 @@
-#include "../include/encoder.h"
+#include <encoder.h>
 #include <stdio.h>
 #include <string.h>
 

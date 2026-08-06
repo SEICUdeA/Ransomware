@@ -1,27 +1,37 @@
-flags=-Wall -Wextra
-libs=
-out=gcc -o 
-name=encoder
-src=./src/
-icd=./include/
-build=./build/
-target=$(build)$(name)
+CC      := gcc
 
-objs=$(src)main.o  \
-	 $(src)log.o   	\
-	 $(src)encoder.o \
+CFLAGS  := -Wall -Wextra -Iinclude -MMD -MP
+LDFLAGS :=
+LIBS    :=
 
-all: compile clean
+NAME    := encoder
 
-compile: $(objs)
-	@[ -d "$(build)" ] || { mkdir "$(build)"; }
-	$(out)$(target) $(objs) $(flags) $(libs)
+SRC_DIR := src
+INC_DIR := include
+BUILD   := build
+
+SRCS := $(shell find $(SRC_DIR) -name '*.c')
+OBJS := $(patsubst $(SRC_DIR)/%.c,$(BUILD)/%.o,$(SRCS))
+DEPS := $(OBJS:.o=.d)
+
+TARGET := $(BUILD)/$(NAME)
+
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	@mkdir -p $(BUILD)
+	$(CC) $(OBJS) -o $@ $(LDFLAGS) $(LIBS)
+
+$(BUILD)/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+run: $(TARGET)
+	./$(TARGET)
 
 clean:
-		@rm $(objs)
+	rm -rf $(BUILD)
 
-debug:
-	gcc -g $(src)* -o $(target)_d
+.PHONY: all run clean
 
-run: 
-	$(target)
+-include $(DEPS)

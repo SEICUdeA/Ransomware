@@ -1,4 +1,7 @@
-#include "../include/log.h"
+#include <log.h>
+#include <string.h>
+#include <stdio.h>
+#include <time.h>
 
 void logger(LogType type, const char *file, const int line, const char *message, ...){
 	if (type < LOG_LEVEL) return;
